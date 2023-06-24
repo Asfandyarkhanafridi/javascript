@@ -142,7 +142,7 @@ function showAddressFactory(street, city, zipCode) {
     };
 }
 let addressFactory = showAddressFactory('number 3', 'Quetta', '87300')
-console.log(addressFactory);
+// console.log(addressFactory);
 
 //and with Constructor Function
 function ShowAddressConstructor() {
@@ -151,4 +151,46 @@ function ShowAddressConstructor() {
         this.zipCode = '87300'
 }
 const showAddressConstructor = new ShowAddressConstructor();
-console.log(showAddressConstructor);
+// console.log(showAddressConstructor);
+
+//Excercise Object Equality
+let address1 = new Address('a', 'b', 'c');
+let address2 = new Address('a', 'b', 'c');
+
+//constructor Function
+function Address(street, city, zipCode) {
+    this.street = street;
+    this.city = city;
+    this.zipCode = zipCode;
+}
+
+function areEqual(address1, address2) {
+    //Retrun true if both address are equal
+    if (address1.street === address2.street &&
+        address1.city === address2.city &&
+        address1.zipCode === address2.zipCode) {
+        return console.log("Are Equal");
+    }
+    else return console.log("Not Equal");
+}
+
+function areSame(address1, address2) {
+    //Retrun true if both address referenced to same object
+    if (address1 === address2) {
+        return console.log("Are Same");
+    }
+    else return console.log("Not Same");
+}
+
+//Excercise Blog Post
+let blogPost = {
+    title: "a",
+    body: "b",
+    author: "c",
+    views: 10,
+    comments: [
+        { author: 'd', body: 'e' },
+        { author: 'f', body: 'g' }
+    ],
+    isLive: true
+} 
